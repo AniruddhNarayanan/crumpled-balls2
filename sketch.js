@@ -21,10 +21,14 @@ function setup() {
 	//making the sprites
     //creating the paper sprite
     //aperSprite=circle(110,185,30);
-	paper = new PaperClass(100,100,20,20);
+	paper = new Paper(100,100,50);
+	side1= new Dustbin(670,175,100,80,180);
 	
 	groundBody=Bodies.rectangle(400,195,800,10,{isStatic:true});
 	World.add(world,groundBody);
+
+	side2=Bodies.rectangle(630,175,100,80,90,{isStatic:true});
+	World.add(world,side2);
 	
 
 
@@ -36,11 +40,20 @@ function setup() {
 
 function draw() {
  
-  background(0);
+  background(180);
   
  paper.display();
+ side1.display();
   
- 
+ rectMode(CENTER)
+ rect(groundBody.position.x,groundBody.position.y,800,10);
+}
+
+function key_pressed(){
+	if(key_Code==="UP_ARROW"){
+		paper.x+6;
+		paper.y-5;
+	}
 }
 
 
