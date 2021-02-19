@@ -83,7 +83,7 @@ var Axes = _dereq_('../geometry/Axes');
             constraintImpulse: { x: 0, y: 0, angle: 0 },
             totalContacts: 0,
             speed: 0,
-            angularSpeed: 0,
+            6          angularSpeed: 0,
             velocity: { x: 0, y: 0 },
             angularVelocity: 0,
             isSensor: false,
@@ -96,7 +96,7 @@ var Axes = _dereq_('../geometry/Axes');
             friction: 0.1,
             frictionStatic: 0.5,
             frictionAir: 0.01,
-            collisionFilter: {
+            collisionFilter: {6
                 category: 0x0001,
                 mask: 0xFFFFFFFF,
                 group: 0

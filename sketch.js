@@ -30,14 +30,12 @@ function setup() {
 	side2=Bodies.rectangle(630,175,100,80,90,{isStatic:true});
 	World.add(world,side2);
 	
-
+	
 
 
 	Engine.run(engine);
-  
+
 }
-
-
 function draw() {
  
   background(180);
@@ -45,16 +43,23 @@ function draw() {
  paper.display();
  side1.display();
   
+ 
  rectMode(CENTER)
  rect(groundBody.position.x,groundBody.position.y,800,10);
 }
 
-function key_pressed(){
-	if(key_Code==="UP_ARROW"){
-		paper.x+6;
-		paper.y-5;
-	}
-}
+function keyPressed(){
+    if(keyCode === 38){
+        Matter.Body.applyForce(paper,{x:100,y:100}, 5)  
+
+		}
+    }
+
+
+
+
+	
+
 
 
 
