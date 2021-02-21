@@ -1,5 +1,4 @@
 
-
 //let c = color(255,204,0);
 //fill(c);
 
@@ -21,8 +20,8 @@ function setup() {
 	//making the sprites
     //creating the paper sprite
     //aperSprite=circle(110,185,30);
-	paper = new Paper(100,100,50);
-	side1= new Dustbin(670,175,100,80,180);
+	paper = new Paper(100,100,60);
+	side1= new Dustbin(670,140,100,100,180);
 	
 	groundBody=Bodies.rectangle(400,195,800,10,{isStatic:true});
 	World.add(world,groundBody);
@@ -39,9 +38,8 @@ function setup() {
 function draw() {
  
   background(180);
-  
- paper.display();
- side1.display();
+  side1.display();
+ paper.display();	
   
  
  rectMode(CENTER)
@@ -50,7 +48,10 @@ function draw() {
 
 function keyPressed(){
     if(keyCode === 38){
-        Matter.Body.applyForce(paper,{x:100,y:100}, 5)  
+		Matter.Body.applyForce(paper.body,paper.body.position, {x: 600, y: -600});
+		// var string = "hi";
+		// console.log(string);
+		// console.log(paper.position.x);
 
 		}
     }
@@ -58,7 +59,8 @@ function keyPressed(){
 
 
 
-	
+
+
 
 
 
